@@ -32,7 +32,7 @@ const SignInPage = () => {
     : { mobileNumber : formData.contactInfo };
 
     try {
-      const response = await fetch(`http://localhost:8000/login`, {
+      const response = await fetch(`https://smart-home-backend-xyir.onrender.com/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +163,7 @@ const SignInPage = () => {
       const { email, name, picture } = credentialResponseDecode;
 
       // Check if user exists
-      const checkRes = await fetch("http://localhost:8000/check-user", {
+      const checkRes = await fetch("https://smart-home-backend-xyir.onrender.com/check-user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const SignInPage = () => {
       const checkData = await checkRes.json();
 
       if (!checkData.exists) {
-        const res = await fetch("http://localhost:8000/signup-with-google", {
+        const res = await fetch("https://smart-home-backend-xyir.onrender.com/signup-with-google", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
