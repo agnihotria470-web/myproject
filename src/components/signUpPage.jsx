@@ -57,7 +57,7 @@ const SignUpPage = () => {
       passwordSchema.parse(formData);
       setErrors({});
 
-      const response = await fetch(`https://smart-home-backend-xyir.onrender.com/api/v1/users/register`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
